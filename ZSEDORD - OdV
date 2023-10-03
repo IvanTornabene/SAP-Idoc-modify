@@ -1,0 +1,25 @@
+*&---------------------------------------------------------------------*
+*&  Include           ZXVEDU02
+*&---------------------------------------------------------------------*
+data e1edp20 type e1edp20.
+
+if dobject-kschl = 'ZSEO'.
+
+  if dxvbep-bmeng is initial.
+
+    int_edidd-segnam = 'E1EDP20'.
+
+    e1edp20-wmeng = dxvbep-bmeng.
+
+    CONDENSE e1edp20-wmeng.
+
+    e1edp20-edatu = dxvbep-edatu.
+
+    CONDENSE e1edp20-edatu.
+
+    int_edidd-sdata = e1edp20.
+
+    append int_edidd.
+
+  endif.
+endif.
