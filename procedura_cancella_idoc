@@ -1,0 +1,14 @@
+Guida implementazione propria per il metodo IF EX IDOC CRATION CHECK.
+
+Il FM sopra richiama MASTER_IDOC_DISTRIBUTE (SE37)  che contiene la perform 1.
+Dentro la 1 (riga 117) trovo la 2 BAdI -> exit Idoc_creation_check
+o meglio BAdI Interface IF_EX_IDOC_CREATION_CHECK
+1) perform IDOC_SELECTION_AND_SERVICES
+Entriamo e cerchiamo la riga 117 dove troviamo il richiamo alla badi. 
+Fai doppio click su 2) exit_idoc_creation_check e poi
+2 click su TYPE REF TO if_ex_idoc_creation_check. 
+Poi click su IDOC_DATA_CHECK e vado in alto su «passaggio a» Selezione Interface.
+Poi doppio click su methods IDOC_DATA_CHECK
+E dal popup 2 click su ZCL_IM_IMP_IDOC_CR_CHECK e si apre uno spazio 
+in cui scrivere codice per controllare se sono presenti i segmenti di interesse 
+dopo la BD64 e nel caso eliminare tutto l’idoc.
